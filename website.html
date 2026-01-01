@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kissan Group - Pure Taste for Every Kitchen</title>
+    <meta name="description" content="Kissan Group offers high-quality grocery products including tasty salt, tomato ketchup, and daily grocery items. Fresh, hygienic, and trusted by families.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#e53e3e",
+                        secondary: "#38a169",
+                        accent: "#f6e05e",
+                        light: "#f7fafc",
+                        dark: "#2d3748"
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(229, 62, 62, 0.1) 0%, rgba(56, 161, 105, 0.1) 100%);
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .quality-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(56, 161, 105, 0.9);
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800 bg-white">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                        <i class="fas fa-utensils text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-heading font-bold text-primary">Kissan Group</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-200">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-200">About Us</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-200">Products</a>
+                    <a href="#why-choose" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-200">Why Choose Us</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-200">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <a href="#products" class="hidden md:inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-red-600 transition-colors duration-200">View Products</a>
+                </div>
+            </div>
+            
+            
+            <div class="md:hidden hidden mt-4 pb-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium py-2">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium py-2">About Us</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-primary font-medium py-2">Products</a>
+                    <a href="#why-choose" class="nav-link text-gray-700 hover:text-primary font-medium py-2">Why Choose Us</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium py-2">Contact</a>
+                    <a href="#products" class="bg-primary text-white px-6 py-2 rounded-full font-medium text-center hover:bg-red-600 transition-colors duration-200">View Products</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="home" class="hero-gradient py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-12 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-dark mb-6">
+                            Pure Taste for <span class="text-primary">Every Kitchen</span>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8 max-w-2xl">
+                            Kissan Group brings you high-quality grocery products that enhance your daily meals. From our tasty salt to delicious tomato ketchup, we ensure every product meets the highest standards of quality and hygiene.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#products" class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-red-600 transition-colors duration-200 inline-flex items-center">
+                                <span>View Products</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#contact" class="bg-white text-primary border-2 border-primary px-8 py-3 rounded-full font-medium hover:bg-gray-50 transition-colors duration-200 inline-flex items-center">
+                                <span>Contact Us</span>
+                                <i class="fas fa-envelope ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                            <img 
+                                src="https://picsum.photos/600/400?random=1" 
+                                alt="Kissan Group grocery products display" 
+                                class="rounded-2xl shadow-xl w-full"
+                                loading="lazy"
+                            />
+                            <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-lg max-w-xs">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                                        <i class="fas fa-award text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-dark">Trusted Quality</p>
+                                        <p class="text-sm text-gray-600">Since 1995</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="about" class="py-16 bg-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">About Kissan Group</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Committed to bringing pure, tasty, and hygienic grocery products to your family table</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-bullseye text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-dark mb-4">Our Mission</h3>
+                        <p class="text-gray-600">To provide every household with high-quality, affordable grocery products that enhance daily meals while maintaining the highest standards of hygiene and taste.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-eye text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-dark mb-4">Our Vision</h3>
+                        <p class="text-gray-600">To become the most trusted grocery brand in every kitchen, known for purity, taste, and commitment to family health and happiness.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-handshake text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-dark mb-4">Our Commitment</h3>
+                        <p class="text-gray-600">We are dedicated to using only the finest ingredients, maintaining strict hygiene standards, and ensuring every product delivers exceptional taste and quality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="products" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Our Premium Products</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Carefully crafted grocery items that bring taste and quality to your kitchen</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden relative">
+                        <div class="quality-badge text-white px-4 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-star mr-1"></i> Premium Quality
+                        </div>
+                        <div class="p-6">
+                            <div class="w-full h-48 bg-gray-100 rounded-lg mb-6 overflow-hidden">
+                                <img 
+                                    src="https://picsum.photos/400/300?random=2" 
+                                    alt="Kissan Tasty Salt" 
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <h3 class="text-xl font-heading font-bold text-dark mb-3">Tasty Salt</h3>
+                            <p class="text-gray-600 mb-4">Pure, refined salt with perfect grain size for enhanced flavor in all your dishes. Free from additives and preservatives.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">$2.99</span>
+                                <button class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-600 transition-colors duration-200">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden relative">
+                        <div class="quality-badge text-white px-4 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-star mr-1"></i> Best Seller
+                        </div>
+                        <div class="p-6">
+                            <div class="w-full h-48 bg-gray-100 rounded-lg mb-6 overflow-hidden">
+                                <img 
+                                    src="https://picsum.photos/400/300?random=3" 
+                                    alt="Kissan Tomato Ketchup" 
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <h3 class="text-xl font-heading font-bold text-dark mb-3">Tomato Ketchup</h3>
+                            <p class="text-gray-600 mb-4">Rich, thick ketchup made from sun-ripened tomatoes. Perfect balance of sweet and tangy flavors for all your meals.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">$3.49</span>
+                                <button class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-600 transition-colors duration-200">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden relative">
+                        <div class="quality-badge text-white px-4 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-leaf mr-1"></i> Fresh & Pure
+                        </div>
+                        <div class="p-6">
+                            <div class="w-full h-48 bg-gray-100 rounded-lg mb-6 overflow-hidden">
+                                <img 
+                                    src="https://picsum.photos/400/300?random=4" 
+                                    alt="Kissan Daily Grocery Items" 
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <h3 class="text-xl font-heading font-bold text-dark mb-3">Daily Grocery Items</h3>
+                            <p class="text-gray-600 mb-4">A wide range of high-quality daily essentials including spices, condiments, and pantry staples for your kitchen needs.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">From $1.99</span>
+                                <button class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-red-600 transition-colors duration-200">
+                                    View All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#contact" class="inline-flex items-center bg-secondary text-white px-8 py-3 rounded-full font-medium hover:bg-green-600 transition-colors duration-200">
+                        <span>Get Custom Quote</span>
+                        <i class="fas fa-phone ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="why-choose" class="py-16 bg-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Why Choose Kissan Group</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Four reasons why families trust us for their grocery needs</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-seedling text-primary text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-dark mb-3">Pure Ingredients</h3>
+                        <p class="text-gray-600">We source only the finest natural ingredients, ensuring purity and quality in every product.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-hand-sparkles text-secondary text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-dark mb-3">Hygienic Processing</h3>
+                        <p class="text-gray-600">State-of-the-art facilities with strict hygiene protocols for safe and clean production.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-tags text-yellow-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-dark mb-3">Affordable Price</h3>
+                        <p class="text-gray-600">Premium quality products at competitive prices, making quality accessible to every family.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-home text-primary text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-dark mb-3">Trusted by Families</h3>
+                        <p class="text-gray-600">Generations of families have trusted Kissan Group for their daily kitchen essentials.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Get In Touch</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Have questions or need assistance? We're here to help!</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-heading font-bold text-dark mb-6">Send us a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-red-600 transition-colors duration-200">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div>
+                        <div class="bg-light p-8 rounded-2xl mb-8">
+                            <h3 class="text-2xl font-heading font-bold text-dark mb-6">Contact Information</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-dark mb-1">Phone Number</h4>
+                                        <p class="text-gray-600">+1 (555) 123-4567</p>
+                                        <p class="text-sm text-gray-500">Mon-Fri, 9AM-6PM</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-secondary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-dark mb-1">Email Address</h4>
+                                        <p class="text-gray-600">info@kissangroup.com</p>
+                                        <p class="text-sm text-gray-500">We respond within 24 hours</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-yellow-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-dark mb-1">Business Address</h4>
+                                        <p class="text-gray-600">123 Food Street, Kitchen District</p>
+                                        <p class="text-gray-600">Fresh City, FC 10001</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <h4 class="font-bold text-dark mb-4">Business Hours</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Monday - Friday</span>
+                                    <span class="font-medium">9:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Saturday</span>
+                                    <span class="font-medium">10:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Sunday</span>
+                                    <span class="font-medium">Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-utensils text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-heading font-bold">Kissan Group</span>
+                    </div>
+                    <p class="text-gray-300 mb-6">Bringing pure taste and quality to every kitchen since 1995.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-heading font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-white transition-colors duration-200">Products</a></li>
+                        <li><a href="#why-choose" class="text-gray-300 hover:text-white transition-colors duration-200">Why Choose Us</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-heading font-bold mb-6">Our Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Tasty Salt</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Tomato Ketchup</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Spices & Condiments</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Pantry Staples</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-heading font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-300 mb-4">Subscribe for updates and special offers</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-grow px-4 py-2 rounded-l-lg text-gray-800 focus:outline-none">
+                        <button class="bg-primary px-4 py-2 rounded-r-lg font-medium hover:bg-red-600 transition-colors duration-200">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300">© Kissan Group. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mt-2">Pure Taste for Every Kitchen</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        
+        const navigationItems = [
+            { "id": 1, "label": "Home", "href": "#home" },
+            { "id": 2, "label": "About Us", "href": "#about" },
+            { "id": 3, "label": "Products", "href": "#products" },
+            { "id": 4, "label": "Why Choose Us", "href": "#why-choose" },
+            { "id": 5, "label": "Contact", "href": "#contact" }
+        ];
+        
+        const products = [
+            { 
+                "id": 1, 
+                "name": "Tasty Salt", 
+                "description": "Pure, refined salt with perfect grain size for enhanced flavor in all your dishes.", 
+                "price": "$2.99",
+                "badge": "Premium Quality",
+                "image": "https://picsum.photos/400/300?random=2"
+            },
+            { 
+                "id": 2, 
+                "name": "Tomato Ketchup", 
+                "description": "Rich, thick ketchup made from sun-ripened tomatoes. Perfect balance of sweet and tangy.", 
+                "price": "$3.49",
+                "badge": "Best Seller",
+                "image": "https://picsum.photos/400/300?random=3"
+            },
+            { 
+                "id": 3, 
+                "name": "Daily Grocery Items", 
+                "description": "A wide range of high-quality daily essentials for your kitchen needs.", 
+                "price": "From $1.99",
+                "badge": "Fresh & Pure",
+                "image": "https://picsum.photos/400/300?random=4"
+            }
+        ];
+        
+        
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+       
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            alert("Thank you, " + name + "! Your message has been sent. We'll get back to you at " + email + " soon.");
+            
+            // Reset form
+            this.reset();
+        });
+        
+        
+        document.querySelectorAll('button:contains("Add to Cart")').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('h3').textContent;
+                
+                
+                this.innerHTML = '<i class="fas fa-check mr-2"></i> Added!';
+                this.classList.remove('bg-primary');
+                this.classList.add('bg-secondary');
+                
+                
+                setTimeout(() => {
+                    this.innerHTML = 'Add to Cart';
+                    this.classList.remove('bg-secondary');
+                    this.classList.add('bg-primary');
+                }, 2000);
+                
+                console.log("Added to cart: " + productName);
+            });
+        });
+        
+        
+        const newsletterButton = document.querySelector('footer button.bg-primary');
+        if (newsletterButton) {
+            newsletterButton.addEventListener('click', function() {
+                const emailInput = this.previousElementSibling;
+                if (emailInput.value && emailInput.value.includes('@')) {
+                    emailInput.value = '';
+                    this.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-paper-plane"></i>';
+                    }, 2000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
